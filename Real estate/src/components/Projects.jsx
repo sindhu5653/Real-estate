@@ -4,6 +4,7 @@ import ArrowLeft from '../assets/left_arrow.png'
 import Image1 from '../assets/project_image1.avif'
 // import Image2 from '../assets/project_image2.avif'
 // import Image3 from '../assets/project_image3.avif'
+import { motion } from 'framer-motion'
 
 const projectsData = [
   {
@@ -57,11 +58,11 @@ const Projects = () => {
         setCardsToShow(1);
       }
     };
-      updateCardsToShow();
+    updateCardsToShow();
 
-      window.addEventListener('resize', updateCardsToShow);
-      return () => window.removeEventListener('resize', updateCardsToShow);
-    
+    window.addEventListener('resize', updateCardsToShow);
+    return () => window.removeEventListener('resize', updateCardsToShow);
+
   }, [])
 
   const nextProject = () => {
@@ -72,7 +73,12 @@ const Projects = () => {
   }
 
   return (
-    <div className='container mx-auto py-4 pt-20 px-6 md:px-20 overflow-hidden' id='Projects'>
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      className='container mx-auto py-4 pt-20 px-6 md:px-20 overflow-hidden' id='Projects'>
       <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'>
         Projects <span className='underline underline-offset-4 decoration-1 font-light'>Completed</span>
       </h1>
@@ -110,7 +116,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

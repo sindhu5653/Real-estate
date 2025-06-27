@@ -1,11 +1,12 @@
 import React from 'react'
+import EstateLogo from '../assets/estate_logo.jpeg'
 
 const Footer = () => {
     return (
         <div className='pt-10 px-4 md:px-20 lg:px-32 bg-gray-900 w-full overflow-hidden' id='Footer'>
             <div className='container mx-auto flex flex-col md:flex-row justify-between items-start'>
                 <div className='w-full md:w-1/3 mb-8 md:mb-0'>
-                    <img src="" alt="logo" />
+                    <img src={EstateLogo} alt="logo" className='w-14'/>
                     <p className='text-gray-400 mt-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est soluta corporis aut optio, non quas doloremque harum consequuntur eaque necessitatibus earum labore natus mollitia modi aliquid odio accusantium voluptatum veniam.</p>
                 </div>
                 <div className='w-full md:w-1/5 mb-8 md:mb-0'>

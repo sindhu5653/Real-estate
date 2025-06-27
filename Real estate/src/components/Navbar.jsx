@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MenuIcon from '../assets/menu.png';
 import CrossIcon from '../assets/cross.png';
+import EstateLogo from '../assets/estate_logo.jpeg';
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -18,12 +19,12 @@ const Navbar = () => {
   },[showMobileMenu])
 
   return (
-    <div className='absolute top-0 left-0 w-full z-10 '>
+    <div className='fixed top-0 left-0 w-full z-50 '>
       {/* Desktop Navbar */}
       <div className='container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent'>
-        <img src="" alt="Logo" className='w-24' />
+        <img src={EstateLogo} alt="Logo" className='w-30 h-10' />
 
-        <ul className='hidden md:flex gap-7 text-white'>
+        <ul className='hidden md:flex gap-7 text-black'>
           <a href="#Header" className='cursor-pointer hover:text-gray-400'>Home</a>
           <a href="#About" className='cursor-pointer hover:text-gray-400'>About</a>
           <a href="#Projects" className='cursor-pointer hover:text-gray-400'>Projects</a>
